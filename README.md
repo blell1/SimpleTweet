@@ -54,12 +54,14 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 Part 1
+
 <img src='https://im7.ezgif.com/tmp/ezgif-7-9acd2b10115c.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Recordit](https://recordit.co/MGExipkxfk) and [EzGif](https://ezgif.com/).
 
 Part 2
-<img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<img src='https://im3.ezgif.com/tmp/ezgif-3-c357977fae36.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Recordit](https://recordit.co/MGExipkxfk) and [EzGif](https://ezgif.com/).
 
