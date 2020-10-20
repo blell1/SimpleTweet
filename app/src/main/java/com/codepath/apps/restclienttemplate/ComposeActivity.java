@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
@@ -25,7 +28,7 @@ public class ComposeActivity extends AppCompatActivity {
 
     EditText etCompose;
     Button btnTweet;
-
+    TextView charCount;
     TwitterClient client;
 
     @Override
@@ -37,8 +40,28 @@ public class ComposeActivity extends AppCompatActivity {
 
         etCompose = findViewById(R.id.etCompose);
         btnTweet = findViewById(R.id.btnTweet);
+        charCount = findViewById(R.id.etCharCount);
+
+        int start = 0;
+        int before = 280;
+        int count = 0;
+        etCompose.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
 
 
+            }
+
+            @Override
+            public void afterTextChanged(Editable charSequence) {
+                charCount.setText(charSequence.length() + "/280");
+            }
+        });
         //set click listener
         btnTweet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +72,10 @@ public class ComposeActivity extends AppCompatActivity {
                     return;
                 }
                 if (tweetContent.length() > MAX_TWEET_LENGTH){
+                    Toast.makeText(ComposeActivity.this, "Sorry, your tweet is too long", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (etCompose.length() > 280){
                     Toast.makeText(ComposeActivity.this, "Sorry, your tweet is too long", Toast.LENGTH_LONG).show();
                     return;
                 }
